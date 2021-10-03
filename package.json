@@ -9,7 +9,6 @@
     "dotenv": "^8.2.0"
   },
   "devDependencies": {
-    "@types/mongoose": "^5.10.3",
     "@types/node": "^10.14.0",
     "aws-sdk": "^2.897.0",
     "tslint": "^5.12.1",
