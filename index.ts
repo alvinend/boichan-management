@@ -35,6 +35,6 @@ exports.handler = async function (event, context) {
 
   context.succeed({
     statusCode: 200,
-    body: '{"result":"completed"}'
+    body: JSON.stringify({ event })
   })
 }
