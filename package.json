@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "mongoose": "^5.0.12",
-    "axios": "^0.21.1",
+    "mongoose": "5.10.19",
     "dotenv": "^8.2.0"
   },
   "devDependencies": {
