@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "mongoose": "^5.0.12",
     "axios": "^0.21.1",
-    "dotenv": "^8.2.0",
-    "mongoose": "^6.0.8"
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {
     "@types/node": "^10.14.0",
