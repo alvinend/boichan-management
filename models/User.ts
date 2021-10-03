@@ -5,9 +5,10 @@ export type IUser = {
   name: string
   email: string
   password: string
+  session: string
 }
 
-type IUserModel = IUser & Document
+export type IUserModel = IUser & Document
 
 // Create Schema
 const UserSchema = new Schema({
@@ -22,7 +23,8 @@ const UserSchema = new Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  session: String
 })
 
 export const User = mongoose.model<IUserModel>('users', UserSchema)

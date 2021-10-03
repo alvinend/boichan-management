@@ -4,20 +4,17 @@ import mongoose from 'mongoose'
 const db = process.env.MONGO_URI
 
 // Connect to MongoDB
-mongoose.set('useNewUrlParser', true);
-mongoose.set('useFindAndModify', false);
-mongoose.set('useCreateIndex', true);
-mongoose.set('useUnifiedTopology', true);
 mongoose
-  .connect(db!, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(db!)
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
-
 
 exports.handler = async function (event, context) {
   const path = event.path
   const httpMethod = event.httpMethod
   const query = event.queryStringParameter
+  const headers = event.headers
+  const body = JSON.parse(event.body)
 
   switch (path) {
     case '/task':
@@ -35,6 +32,9 @@ exports.handler = async function (event, context) {
 
   context.succeed({
     statusCode: 200,
-    body: JSON.stringify({ event })
+    body: JSON.stringify({
+      event,
+      test: 'AAAAAAAAA'
+    })
   })
 }
