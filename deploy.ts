@@ -21,7 +21,7 @@ const uploadToS3 = async () => {
   await sleep(10000)
 
   const resLambda = await lambda.updateFunctionCode({
-    FunctionName: 'boi-chan-alkitab-function',
+    FunctionName: 'boichan-management-task-api',
     S3Bucket: 'thebucketofalvinend',
     S3Key: 'boichan-management-task-api/deploy.zip'
   }).promise()
