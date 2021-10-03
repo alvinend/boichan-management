@@ -4,12 +4,8 @@ import mongoose from 'mongoose'
 const db = process.env.MONGO_URI
 
 // Connect to MongoDB
-mongoose.set('useNewUrlParser', true);
-mongoose.set('useFindAndModify', false);
-mongoose.set('useCreateIndex', true);
-mongoose.set('useUnifiedTopology', true);
 mongoose
-  .connect(db!, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(db!)
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
