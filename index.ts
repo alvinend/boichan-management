@@ -1,5 +1,6 @@
 import { taskApi } from "./api/task"
 import mongoose from 'mongoose'
+import { userApi } from "./api/user";
 
 const db = process.env.MONGO_URI
 
@@ -26,8 +27,8 @@ exports.handler = async function (event, context) {
       })
       break;
 
-    case '/task':
-      const userData = await taskApi(path, httpMethod, query)
+    case '/user':
+      const userData = await userApi(event)
 
       context.succeed({
         statusCode: 200,

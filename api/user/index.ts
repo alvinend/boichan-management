@@ -5,7 +5,7 @@ import { deleteUser } from "./deleteUser"
 import { fetchUser } from "./fetchUser"
 import { updateUser } from "./updateUser"
 
-export const taskApi = async (event) => {
+export const userApi = async (event) => {
   const path = event.path
   const httpMethod = event.httpMethod
   const query = event.queryStringParameter
