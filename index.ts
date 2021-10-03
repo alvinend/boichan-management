@@ -18,11 +18,20 @@ exports.handler = async function (event, context) {
 
   switch (path) {
     case '/task':
-      const data = await taskApi(path, httpMethod, query)
+      const taskData = await taskApi(path, httpMethod, query)
 
       context.succeed({
         statusCode: 200,
-        body: JSON.stringify(data)
+        body: JSON.stringify(taskData)
+      })
+      break;
+
+    case '/task':
+      const userData = await taskApi(path, httpMethod, query)
+
+      context.succeed({
+        statusCode: 200,
+        body: JSON.stringify(userData)
       })
       break;
   
