@@ -4,8 +4,8 @@ exports.handler = async function (event, context) {
   const query = event.queryStringParameter
 
   context.succeed({
-    statusCode: 200,
-    headers: { "X-Line-Status" : "OK"},
-    body: '{"result":"completed"}'
+    path,
+    httpMethod,
+    query
   })
 }
