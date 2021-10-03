@@ -12,7 +12,7 @@ const uploadToS3 = async () => {
 
   const resS3 = await s3.putObject({
     Bucket: 'thebucketofalvinend',
-    Key: 'boichan-alkitab-pipe/deploy.zip',
+    Key: 'boichan-management-task-api/deploy.zip',
     Body: file
   }).promise()
 
@@ -23,7 +23,7 @@ const uploadToS3 = async () => {
   const resLambda = await lambda.updateFunctionCode({
     FunctionName: 'boi-chan-alkitab-function',
     S3Bucket: 'thebucketofalvinend',
-    S3Key: 'boichan-alkitab-pipe/deploy.zip'
+    S3Key: 'boichan-management-task-api/deploy.zip'
   }).promise()
   console.log('Response From Lambda')
   console.log(resLambda)
