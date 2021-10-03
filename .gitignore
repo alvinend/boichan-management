@@ -1,0 +1,5 @@
+node_modules
+dist
+test
+deploy.zip
+.env
