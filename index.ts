@@ -18,7 +18,6 @@ exports.handler = async function (event, context) {
   const path = event.path
   const httpMethod = event.httpMethod
   const query = event.queryStringParameter
-  let response = {}
 
   switch (path) {
     case '/task':
