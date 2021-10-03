@@ -1,4 +1,18 @@
 import { taskApi } from "./api/task"
+import mongoose from 'mongoose'
+
+const db = process.env.MONGO_URI
+
+// Connect to MongoDB
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.set('useUnifiedTopology', true);
+mongoose
+  .connect(db!, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('MongoDB Connected'))
+  .catch(err => console.log(err));
+
 
 exports.handler = async function (event, context) {
   const path = event.path
@@ -8,9 +22,11 @@ exports.handler = async function (event, context) {
 
   switch (path) {
     case '/task':
+      const data = await taskApi(path, httpMethod, query)
+
       context.succeed({
         statusCode: 200,
-        body: JSON.stringify(taskApi(path, httpMethod, query))
+        body: JSON.stringify(data)
       })
       break;
   
