@@ -8,10 +8,11 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import MyTask from "./MyTask.vue";
 import Sidebar from "./Sidebar.vue";
 
 export default defineComponent({
-components: { Sidebar },
+components: { Sidebar, MyTask },
   name: "Main",
 });
 </script>
@@ -19,6 +20,6 @@ components: { Sidebar },
 <template>
   <div class="main-container">
     <Sidebar></Sidebar>
-    <div>MAINAA</div>
+    <MyTask></MyTask>
   </div>
 </template>
