@@ -62,6 +62,7 @@
 
 <template>
   <div>
+    <font-awesome-icon icon="user-secret" />
     <Main />
   </div>
 </template>
